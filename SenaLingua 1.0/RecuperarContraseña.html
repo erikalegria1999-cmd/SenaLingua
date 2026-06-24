@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Style_RecuperarContraseña.css"> <title>SENA Lingua - Recuperar Contraseña</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/SENA.jpg" alt="Logo SENA Lingua">
+            <h1>SENA <span>Lingua</span></h1> 
+        </div>
+        <nav>
+            <a href="SenaLingua.html">Inicio</a>
+            <a href="Curso.html">Cursos</a>
+            <a href="Nosotros.html">Nosotros</a>
+            <a href="Concatos.html">Contacto</a>
+        </nav>
+        <div class="header-actions">
+            <a href="Inicio_Sesion.html" class="btn-secondary">Inicio Sesión</a>
+            <a href="Registro.html" class="btn-primary">Registrarse</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <form action="/auth/forgot-password" method="POST">
+                <h2>Restablecer Contraseña</h2>
+                <p class="form-instruction">Ingresa el correo electrónico asociado a tu cuenta (Aprendiz o Instructor) y te enviaremos las instrucciones para cambiar tu contraseña.</p>
+                
+                <div class="form-group">
+                    <label for="recovery-email">Correo Electrónico:</label>
+                    <input type="email" id="recovery-email" name="correo" placeholder="ejemplo@soy.sena.edu.co" required>
+                </div>
+
+                <button type="submit" class="btn-login">Enviar instrucciones</button>
+                
+                <div class="form-actions-helper" style="text-align: center; margin-top: 1rem;">
+                    <a href="Inicio_Sesion.html" class="forgot-password">← Volver al Inicio de Sesión</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>SENA Lingua</h3>
+            <p>Aprende inglés técnico para el sector tecnológico.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

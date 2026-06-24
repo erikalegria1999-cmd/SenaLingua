@@ -1,4 +1,4 @@
-/* --- PALETA DE COLORES --- */
+/*1. PALETA  DE COLORES */
 :root {
     --Verde: #39A900;
     --VerdeHover: #2e8800;
@@ -7,8 +7,14 @@
     --background: #f8fafc;
     --texto: #1e293b;
     --texto-suave: #64748b;
+    --sombra-suave: 0 10px 25px rgba(0, 0, 0, 0.05);
+    
+    /* Configuración estructural complementaria */
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
+/* 2. CONFIGURACIÓN GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -17,416 +23,380 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--background);
+    background-color: var(--background);
     color: var(--texto);
     line-height: 1.6;
-    overflow-x: hidden; 
 }
 
-/* --- HEADER --- */
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/*3. HEADER & NAVEGACIÓN */
 header {
+    background-color: var(--Blanco);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background: var(--Blanco);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    padding: 20px 5%;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: var(--sombra-suave);
 }
 
-.logo {
+header .logo {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.logo img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
+header .logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-.logo h1 {
-    color: var(--GrisOscuro);
-    font-size: 1.4rem;
+header .logo h1 {
+    font-size: 1.3rem;
+    color: var(--texto);
     font-weight: 700;
-    white-space: nowrap; 
 }
 
-.logo h1 span {
+header .logo h1 span {
     color: var(--Verde);
 }
 
-nav {
+header nav {
     display: flex;
-    gap: 20px;
-
+    gap: 24px;
 }
 
-nav a {
-    text-decoration: none;
+header nav a {
     color: var(--texto-suave);
     font-weight: 500;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
     position: relative;
-    padding: 10px 5px;
+    padding: 4px 0;
 }
 
-nav a:hover, nav a.active {
+header nav a:hover, 
+header nav a.active {
     color: var(--Verde);
 }
 
-nav a::after {
-    content: "";
+header nav a.active::after {
+    content: '';
     position: absolute;
+    bottom: 0;
     left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background: var(--Verde);
-    transition: 0.3s ease;
-}
-
-nav a:hover::after, nav a.active::after {
     width: 100%;
+    height: 2px;
+    background-color: var(--Verde);
+    border-radius: 2px;
 }
 
-.header-actions {
+header .header-actions {
     display: flex;
+    align-items: center;
     gap: 12px;
-    align-items: center;
 }
 
-/* --- BOTONES BASE --- */
-.btn-secondary, .btn-primary, .btn-hero {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 20px 24px;
-    gap: 20px;
-    border: 2px solid transparent;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+/* Botones */
+.btn-primary, .btn-secondary, .btn-hero {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.header-actions .btn-secondary, 
-.header-actions .btn-primary {
-    min-width: 120px;
-    height: 42px;
-}
-
-.btn-secondary {
-    background: transparent;
-    border-color: var(--Verde);
-    color: var(--Verde);
-}
-
-.btn-secondary:hover {
-    background: rgba(57, 169, 0, 0.05);
-    transform: translateY(-2px);
+    text-align: center;
+    display: inline-block;
 }
 
 .btn-primary {
-    background: var(--Verde);
+    background-color: var(--Verde);
     color: var(--Blanco);
 }
 
 .btn-primary:hover {
-    background: var(--VerdeHover);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(57, 169, 0, 0.2);
+    background-color: var(--VerdeHover);
 }
 
-/* --- HERO SECTION --- */
+.btn-secondary {
+    color: var(--texto);
+    background-color: transparent;
+    border: 1px solid #E2E8F0;
+}
+
+.btn-secondary:hover {
+    background-color: var(--background);
+    border-color: var(--texto-suave);
+}
+
+/* 4. HERO SECTION*/
 .hero {
-    background: linear-gradient(135deg, #f0fdf4 0%, #e1f5fe 100%);
-    padding: 80px 5%;
+    background: linear-gradient(135deg, var(--texto) 0%, var(--GrisOscuro) 100%);
+    color: var(--Blanco);
+    border-radius: var(--border-radius);
+    padding: 90px 40px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 30px;
+    box-shadow: var(--sombra-suave);
 }
 
 .hero-content {
-    max-width: 800px;
-    animation: aparecer 1s ease forwards;
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    color: var(--GrisOscuro);
-    line-height: 1.3;
-    margin-bottom: 20px;
+    font-size: 2.6rem;
     font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.1rem;
-    color: var(--texto-suave);
-    margin-bottom: 30px;
+    color: #94A3B8;
+    margin-bottom: 35px;
 }
 
 .hero-badges {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
 .hero-badges span {
-    background: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: .9rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,.05);
+    background-color: rgba(57, 169, 0, 0.15);
+    color: #4ADE80;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: 500;
+    border: 1px solid rgba(74, 222, 128, 0.3);
 }
 
 .btn-hero {
-    background: var(--Verde);
+    background-color: var(--Verde);
     color: var(--Blanco);
-    padding: 14px 35px;
+    padding: 14px 36px;
     font-size: 1rem;
-    box-shadow: 0 8px 25px rgba(57, 169, 0, 0.15);
-    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(57, 169, 0, 0.3);
 }
 
 .btn-hero:hover {
-    background: var(--VerdeHover);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(57, 169, 0, 0.3);
+    background-color: var(--VerdeHover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(57, 169, 0, 0.4);
 }
 
-/* --- CONTENEDORES DE TARJETAS  --- */
-.niveles, .caracteristicas, .beneficios, .cta {
-    padding: 60px 5%;
-    text-align: center;
-}
-
+/*5. SECCIONES DE TARJETAS (Niveles y Características)*/
 .niveles h2, .caracteristicas h2, .beneficios h2 {
+    text-align: center;
     font-size: 2rem;
-    margin-bottom: 40px;
-    color: var(--GrisOscuro);
+    color: var(--texto);
+    margin-bottom: 45px;
+    font-weight: 700;
 }
 
-.caracteristicas h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--Verde);
-    margin: 15px auto 0;
-    border-radius: 10px;
-}
-
-.cards-container, .beneficios-container {
+.cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
 }
-.card, .beneficio {
-    background: var(--Blanco);
-    padding: 35px 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #f1f5f9;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+.card {
+    background-color: var(--Blanco);
+    padding: 35px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #F1F5F9;
+    transition: var(--transition);
 }
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--Verde);
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(57, 169, 0, 0.2);
 }
-.card:hover, .beneficio:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-}
-.card .icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-.card h3, .beneficio h3 {
+
+.card h3 {
     font-size: 1.25rem;
+    color: var(--texto);
     margin-bottom: 12px;
-    color: var(--GrisOscuro);
 }
-.card p, .beneficio p {
+
+.card p {
     color: var(--texto-suave);
     font-size: 0.95rem;
 }
-/* --- ESTADÍSTICAS --- */
-.estadisticas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 5%;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.01);
+
+/* Características específicas */
+.caracteristicas .card {
+    text-align: center;
 }
+
+.caracteristicas .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* 6. ESTADÍSTICAS */
+.estadisticas {
+    background-color: var(--Blanco);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    margin: 40px 0;
+    border-top: 4px solid var(--Verde);
+}
+
 .stat {
     text-align: center;
 }
+
 .stat h3 {
+    font-size: 2.5rem;
     color: var(--Verde);
-    font-size: 2.2rem;
     font-weight: 700;
+    margin-bottom: 4px;
 }
+
 .stat p {
     color: var(--texto-suave);
     font-weight: 500;
 }
-/* --- CALL TO ACTION (CTA) --- */
+
+/* 7. BENEFICIOS */
+.beneficios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.beneficio {
+    background-color: var(--Blanco);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    border-left: 4px solid var(--Verde);
+}
+
+.beneficio h3 {
+    font-size: 1.15rem;
+    color: var(--texto);
+    margin-bottom: 10px;
+}
+
+.beneficio p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+/*  8. CALL TO ACTION (CTA) */
 .cta {
-    background: #ffffff;
-    border-radius: 20px;
-    max-width: 1200px;
-    margin: 40px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    background: linear-gradient(135deg, var(--Verde) 0%, var(--VerdeHover) 100%);
+    color: var(--Blanco);
+    text-align: center;
+    padding: 70px 40px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--sombra-suave);
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .cta p {
-    margin: 15px 0 25px;
-    color: var(--texto-suave);
     font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-/* --- FOOTER --- */
-footer {
-    background: var(--GrisOscuro);
-    color: white;
-    padding: 40px 5%;
-    text-align: center;
-    width: 100%;
-}
-
-.footer-content h3 {
+.cta .btn-hero {
+    background-color: var(--Blanco);
     color: var(--Verde);
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
-.footer-content p {
-    color: #cbd5e1;
+.cta .btn-hero:hover {
+    background-color: var(--background);
+    color: var(--VerdeHover);
+}
+
+/*9. FOOTER */
+footer {
+    background-color: var(--GrisOscuro);
+    color: #94A3B8;
+    padding: 50px 20px;
+    text-align: center;
     font-size: 0.9rem;
-}
-/* tamaños para dispositivos */
-@media (max-width: 992px) {
-    header {
-        padding: 15px 4%;
-    }
-    nav {
-        gap: 15px;
-    }
-    .hero h2 {
-        font-size: 2.2rem;
-    }
+    margin-top: 40px;
 }
 
+footer h3 {
+    color: var(--Blanco);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
+
+/*10. RESPONSIVE DESIGN (Media Queries) */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 15px;
-        padding: 20px 5%;
-        text-align: center;
+        padding: 15px;
     }
 
-    nav {
-        width: 100%;
-        justify-content: center;
+    header nav {
+        gap: 15px;
         flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    nav a {
-        padding: 5px 10px;
-        font-size: 0.95rem;
-    }
-
-    .header-actions {
-        width: 100%;
         justify-content: center;
-        gap: 10px;
     }
 
-    .header-actions .btn-secondary, 
-    .header-actions .btn-primary {
-        flex: 1;
-        max-width: 150px;
-    }
-    .hero {
-        padding: 60px 5%;
-    }
     .hero h2 {
-        font-size: 1.8rem;
-    }
-    .hero p {
-        font-size: 1rem;
+        font-size: 1.9rem;
     }
 
-    .niveles h2, .caracteristicas h2, .beneficios h2 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .header-actions .btn-secondary, 
-    .header-actions .btn-primary {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero-badges {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .hero-badges span {
-        width: 100%;
-        max-width: 200px;
+    .hero {
+        padding: 50px 20px;
     }
     
-    .cards-container, .beneficios-container {
-        grid-template-columns: 1fr; /* Una sola tarjeta por fila obligatoria */
+    .estadisticas {
+        flex-direction: column;
+        gap: 25px;
     }
 }

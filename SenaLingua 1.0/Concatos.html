@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Style_contactos.css">
+    <title>SenaLingua - contactos</title>
+</head>
+<body>
+    <section class="contacto-container">
+    <h2>Ponte en Contacto</h2>
+    <p>¿Tienes dudas sobre el uso de las aulas virtuales o el material de estudio? Escríbenos.</p>
+
+    <div class="contacto-wrapper">
+        <form class="form-contacto" action="#" method="POST">
+            <div class="form-group">
+                <label for="c-nombre">Nombre Completo:</label>
+                <input type="text" id="c-nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="c-correo">Correo Institucional:</label>
+                <input type="email" id="c-correo" placeholder="ejemplo@soy.sena.edu.co" required>
+            </div>
+            <div class="form-group">
+                <label for="c-rol">Soy un:</label>
+                <select id="c-rol" class="form-select">
+                    <option value="aprendiz">Aprendiz</option>
+                    <option value="instructor">Instructor</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="c-mensaje">Mensaje o Sugerencia:</label>
+                <textarea id="c-mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+            <button type="submit" class="btn-login">Enviar Mensaje</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

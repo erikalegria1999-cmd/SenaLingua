@@ -1,0 +1,168 @@
+/*   1. PALETA DE COLORES*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --Verde: #39A900;
+    --VerdeHover: #2e8800;
+    --Blanco: #FFFFFF;
+    --GrisOscuro: #333333;
+    --background: #f8fafc;
+    --texto: #1e293b;
+    --texto-suave: #64748b;
+    --sombra-suave: 0 10px 25px rgba(0, 0, 0, 0.05);
+    
+    /* Configuración estructural complementaria */
+    --border-radius: 12px;
+    --border-input: #e2e8f0;
+    --transition: all 0.3s ease;
+}
+
+/* 2. CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--texto);
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 3. CONTENEDOR DE CONTACTO*/
+.contacto-container {
+    background-color: var(--Blanco);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #f1f5f9;
+}
+
+.contacto-container h2 {
+    font-size: 2rem;
+    color: var(--texto);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contacto-container p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Wrapper del Formulario */
+.contacto-wrapper {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto);
+    margin-bottom: 8px;
+}
+
+/* Inputs de texto, email, select y textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--texto);
+    background-color: var(--background);
+    border: 1px solid var(--border-input);
+    border-radius: 8px;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* Estilo específico para el área de mensaje */
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar solo hacia abajo */
+    min-height: 120px;
+}
+
+/* Estados Focus para todos los elementos del formulario */
+.form-group input:focus,
+.form-select:focus,
+.form-group textarea:focus {
+    border-color: var(--Verde);
+    background-color: var(--Blanco);
+    box-shadow: 0 0 0 3px rgba(57, 169, 0, 0.1);
+}
+
+/* Estilización de placeholders */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Estilos personalizados para el Select de Roles */
+.form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    padding-right: 40px;
+}
+
+/*4. BOTÓN DE ENVÍO*/
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--Verde);
+    color: var(--Blanco);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(57, 169, 0, 0.2);
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: var(--VerdeHover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(57, 169, 0, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* 5. MEDIA QUERIES (Responsivo) */
+@media (max-width: 480px) {
+    .contacto-container {
+        padding: 30px 20px;
+    }
+
+    .contacto-container h2 {
+        font-size: 1.7rem;
+    }
+}
