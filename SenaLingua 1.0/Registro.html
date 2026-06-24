@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Style_registro.css">
+    <title>SENA Lingua - Registro de Usuario</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/SENA.jpg" alt="Logo SENA Lingua">
+            <h1>SENA <span>Lingua</span></h1> 
+        </div>
+        <nav>
+            <a href="SenaLingua.html">Inicio</a>
+            <a href="#">Cursos</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="header-actions">
+            <a href="Inicio_Sesion.html" class="btn-secondary">Inicio Sesión</a>
+            <a href="Registro.html" class="btn-primary active">Registrarse</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <form action="/auth/register" method="POST">
+                <h2>Crear Cuenta</h2>
+                
+                <div class="form-group">
+                    <label for="nombre-completo">Nombres y Apellidos:</label>
+                    <input type="text" id="nombre-completo" name="nombreCompleto" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-documento">Tipo de Documento:</label>
+                    <select id="tipo-documento" name="tipoDocumento" required class="form-select">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="CC">Cédula de Ciudadanía</option>
+                        <option value="TI">Tarjeta de Identidad</option>
+                        <option value="CE">Cédula de Extranjería</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numero-documento">Número de Documento:</label>
+                    <input type="text" id="numero-documento" name="numeroDocumento" placeholder="Número de identificación" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Rol en la plataforma:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="rol" value="aprendiz" checked required>
+                            <span>Aprendiz</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="rol" value="instructor" required>
+                            <span>Instructor</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@soy.sena.edu.co" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="confirm-password" name="confirmPassword" placeholder="Repite tu contraseña" minlength="8" required>
+                </div>
+
+                <button type="submit" class="btn-login">Registrarse</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>SENA Lingua</h3>
+            <p>Aprende inglés técnico para el sector tecnológico.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

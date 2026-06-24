@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Style_Inicio-sesion.css">
+    <title>SENA Lingua - Inicio de Sesión</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/SENA.jpg" alt="Logo SENA Lingua">
+            <h1>SENA <span>Lingua</span></h1> 
+        </div>
+        <nav>
+            <a href="SenaLingua.html">Inicio</a>
+            <a href="#">Cursos</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="header-actions">
+            <a href="Inicio_Sesion.html" class="btn-secondary active">Inicio Sesión</a>
+            <a href="Registro.html" class="btn-primary">Registrarse</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <form action="/auth/login" method="POST">
+                <h2>Iniciar Sesión</h2>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre de Usuario:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>SENA Lingua</h3>
+            <p>Aprende inglés técnico para el sector tecnológico.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
